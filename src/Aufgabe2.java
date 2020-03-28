@@ -60,7 +60,7 @@ public class Aufgabe2 {
 
             }
             int uAvg = u / samples;
-            long runtimeAvg = (long) (20.3 * u + 3.5 + 22.4 * n);
+            long runtimeAvg = (long) (20.3 * uAvg + 1 + 22.4 * n);
 
             System.out.println(n + ";" + uAvg + ";" + runtimeAvg);
 

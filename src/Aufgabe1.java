@@ -10,15 +10,16 @@ public class Aufgabe1 {
     public static void main(String[] args) throws FileNotFoundException {
 
 // Umleitung der Ausgabe in die Datei Aufgabe1.txt
-        System.setOut(new PrintStream(new FileOutputStream("Aufgabe1.txt")));
+        System.setOut(new PrintStream(new FileOutputStream("Aufgabe11.txt")));
         System.out.println("Ausgabe für Aufgabe 1:");
 
 // Aufrufe Ihres Algorithmus mit geeigneten Testdaten
-        int rep = 5;
-        run(rep, 6);
-        System.out.println(sumTimes);
-        System.out.println(rep);
-        System.out.println(rep / 2);
+        int rep = 100000;
+        int l = 3;
+        run(rep, l);
+        System.out.println();
+        System.out.println("Durchschnittliche Dauer bei Array Länge " +l+":"+ sumTimes/rep);
+
     }
 
 
