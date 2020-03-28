@@ -18,25 +18,25 @@ public class Aufgabe1 {
         run(rep, 6);
         System.out.println(sumTimes);
         System.out.println(rep);
-        System.out.println(rep/2);
+        System.out.println(rep / 2);
     }
 
 
     // nextInt is normally exclusive of the top value,
 // so add 1 to make it inclusive
 
-    public static int[] makeArray(int x){
+    public static int[] makeArray(int x) {
         int[] array = new int[x];
-        for(int i = 0;i<array.length;i++){
-             array[i] = ThreadLocalRandom.current().nextInt(min, max + 1);
+        for (int i = 0; i < array.length; i++) {
+            array[i] = ThreadLocalRandom.current().nextInt(min, max + 1);
         }
         return array;
     }
 
-    public static boolean pressureIsOK(int[] values){
-        for (int i = 0; i<values.length ; i++) {
+    public static boolean pressureIsOK(int[] values) {
+        for (int i = 0; i < values.length; i++) {
             if (values[i] < 2) {
-                sumTimes += (i+1);
+                sumTimes += (i + 1);
                 return false;
             }
         }
@@ -44,8 +44,8 @@ public class Aufgabe1 {
         return true;
     }
 
-    public static void run(int rep, int length){
-        for (int i = 0; i<rep ;i++){
+    public static void run(int rep, int length) {
+        for (int i = 0; i < rep; i++) {
             pressureIsOK(makeArray(length));
         }
     }
