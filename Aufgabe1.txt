@@ -1,0 +1,4 @@
+Ausgabe für Aufgabe 1:
+9.0
+5
+2
