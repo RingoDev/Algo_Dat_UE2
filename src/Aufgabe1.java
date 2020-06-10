@@ -10,7 +10,7 @@ public class Aufgabe1 {
     public static void main(String[] args) throws FileNotFoundException {
 
 // Umleitung der Ausgabe in die Datei Aufgabe1.txt
-        System.setOut(new PrintStream(new FileOutputStream("C:/Users/Thomas/IntellijProjects/Algo_Dat_UE2/Aufgabe1.txt")));
+        System.setOut(new PrintStream(new FileOutputStream("Aufgabe1.txt")));
         System.out.println("Ausgabe für Aufgabe 1:");
 
 // Aufrufe Ihres Algorithmus mit geeigneten Testdaten
