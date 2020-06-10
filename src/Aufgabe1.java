@@ -4,23 +4,29 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Aufgabe1 {
     final static int min = 0;
     final static int max = 5;
-    public static float sumTimes = 0;
+    public static float sum = 0;
 
 
     public static void main(String[] args) throws FileNotFoundException {
 
 // Umleitung der Ausgabe in die Datei Aufgabe1.txt
-        System.setOut(new PrintStream(new FileOutputStream("Aufgabe11.txt")));
+        System.setOut(new PrintStream(new FileOutputStream("C:/Users/Thomas/IntellijProjects/Algo_Dat_UE2/Aufgabe1.txt")));
         System.out.println("Ausgabe für Aufgabe 1:");
 
 // Aufrufe Ihres Algorithmus mit geeigneten Testdaten
-        int rep = 100000;
-        int l = 3;
-        run(rep, l);
-        System.out.println();
-        System.out.println("Durchschnittliche Dauer bei Array Länge " +l+":"+ sumTimes/rep);
 
+        int rep = 1000000;
+        for(int i = 0; i<21;i++){
+
+
+            run(rep, i);
+            System.out.println("Average Schleifendurchläufe bei Array Länge " +i+": "+ Math.round((sum/rep)*100)/100.0);
+            System.out.println();
+            sum = 0;
+
+        }
     }
+
 
 
     // nextInt is normally exclusive of the top value,
@@ -34,14 +40,27 @@ public class Aufgabe1 {
         return array;
     }
 
+    static boolean Test(int[] values) {
+        //messwerte nur von 0 bis 5
+        int i;
+        for (i = 0; i < values.length; i++) {
+            if (values[i]>=2) {
+                return false;
+            }
+
+        }
+        return true;
+    }
+
     public static boolean pressureIsOK(int[] values) {
+        if(values == null)return true;
         for (int i = 0; i < values.length; i++) {
             if (values[i] < 2) {
-                sumTimes += (i + 1);
+                sum += (i + 1);
                 return false;
             }
         }
-        sumTimes += (values.length);
+        sum += (values.length);
         return true;
     }
 
